@@ -1,0 +1,606 @@
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEvents (20160829113518)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160829113518"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/events" for ::1 at 2016-08-29 13:35:35 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 527ms (Views: 517.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-29 13:35:36 +0200
+
+
+Started GET "/assets/scaffolds.self-18c66ede9fb6b02536ccd4513658f5880a474ccf869cb53926f0e1c2d3a36952.css?body=1" for ::1 at 2016-08-29 13:35:36 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-29 13:35:36 +0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-08-29 13:35:36 +0200
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-29 13:35:36 +0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-08-29 13:35:36 +0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-29 13:35:36 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-29 13:35:36 +0200
+
+
+Started GET "/events/new" for ::1 at 2016-08-29 13:35:46 +0200
+Processing by EventsController#new as HTML
+  Rendered events/_form.html.erb (17.8ms)
+  Rendered events/new.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 36ms (Views: 31.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/events" for ::1 at 2016-08-29 13:35:52 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OFyJs5o3H4PIS5h51y6xY9rxpIgx1ab8GLvxTIbwHQf86GPuzkFdlflvJZ0qdisMihYqYm3c6p8iqnnB6u8UQA==", "event"=>{"description"=>"toto"}, "commit"=>"Create Event"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "events" ("description", "created_at", "updated_at") VALUES (?, ?, ?)  [["description", "toto"], ["created_at", "2016-08-29 11:35:52.618516"], ["updated_at", "2016-08-29 11:35:52.618516"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events/1
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/events/1" for ::1 at 2016-08-29 13:35:52 +0200
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 16ms (Views: 10.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for ::1 at 2016-08-29 13:35:55 +0200
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateIncidents (20160829113800)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateIncidents (20160829113800)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "incidents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160829113800"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddToEvents (20160829113828)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160829113828"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddReferenceToEvents (20160829115157)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "events" ADD "incident_id" integer[0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.5ms)[0m  [1mCREATE  INDEX "index_events_on_incident_id" ON "events" ("incident_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160829115157"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_incident_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_incident_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddStatusToEvent (20160830083349)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "events" ADD "status" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160830083349"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_incident_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_incident_id' AND type='index'
+[0m
+
+
+Started GET "/incidents" for ::1 at 2016-08-30 10:35:06 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IncidentsController#index as HTML
+  [1m[35mIncident Load (0.2ms)[0m  SELECT "incidents".* FROM "incidents"
+  Rendered incidents/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 392ms (Views: 377.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-30 10:35:06 +0200
+
+
+Started GET "/assets/incidents.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-30 10:35:06 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-30 10:35:06 +0200
+
+
+Started GET "/assets/scaffolds.self-18c66ede9fb6b02536ccd4513658f5880a474ccf869cb53926f0e1c2d3a36952.css?body=1" for ::1 at 2016-08-30 10:35:06 +0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-08-30 10:35:06 +0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-08-30 10:35:06 +0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-30 10:35:06 +0200
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-30 10:35:06 +0200
+
+
+Started GET "/assets/incidents.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-30 10:35:06 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-30 10:35:06 +0200
+
+
+Started GET "/incidents/new" for ::1 at 2016-08-30 10:35:08 +0200
+Processing by IncidentsController#new as HTML
+  Rendered incidents/_form.html.erb (19.5ms)
+  Rendered incidents/new.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 42ms (Views: 36.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/incidents" for ::1 at 2016-08-30 10:35:16 +0200
+Processing by IncidentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GFHciEW2mmVEQ0Wo+gReGG3yYTqLWPfWlpRJftPrXybc5TbVEcDYc3Vn+EwHXMR3PRXv0NdRu7WshcHzv/RWYQ==", "incident"=>{"title"=>"toto", "description"=>"toto", "status"=>"open"}, "commit"=>"Create Incident"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "incidents" ("title", "description", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "toto"], ["description", "toto"], ["status", "open"], ["created_at", "2016-08-30 08:35:16.162183"], ["updated_at", "2016-08-30 08:35:16.162183"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/incidents/1
+Completed 302 Found in 8ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/incidents/1" for ::1 at 2016-08-30 10:35:16 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mIncident Load (0.2ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered incidents/show.html.erb within layouts/application (29.9ms)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `commenter' for #<Event:0x007f9fd9ec1eb0>):
+    28: <%= form_for([@incident, @incident.events.build]) do |f| %>
+    29:   <p>
+    30:     <%= f.label :description %><br>
+    31:     <%= f.text_field :commenter %>
+    32:   </p>
+    33:   <p>
+    34:     <%= f.label :status %><br>
+  app/views/incidents/show.html.erb:31:in `block in _app_views_incidents_show_html_erb__2938728212951208044_70162280942500'
+  app/views/incidents/show.html.erb:28:in `_app_views_incidents_show_html_erb__2938728212951208044_70162280942500'
+
+
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.7ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.1ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.3ms)
+
+
+Started GET "/incidents/1" for ::1 at 2016-08-30 10:35:34 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIncident Load (0.1ms)[0m  [1mSELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered incidents/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-30 10:35:34 +0200
+
+
+Started GET "/assets/scaffolds.self-18c66ede9fb6b02536ccd4513658f5880a474ccf869cb53926f0e1c2d3a36952.css?body=1" for ::1 at 2016-08-30 10:35:34 +0200
+
+
+Started GET "/assets/incidents.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-30 10:35:34 +0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-08-30 10:35:34 +0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-08-30 10:35:34 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-30 10:35:34 +0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-30 10:35:34 +0200
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-30 10:35:34 +0200
+
+
+Started GET "/assets/incidents.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-30 10:35:34 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-30 10:35:34 +0200
+
+
+Started POST "/incidents/1/events" for ::1 at 2016-08-30 10:35:41 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5TY3Lr5xDbxPyW0nWU0FiKBbpcJe1mPv6amICabV8sMhgt1z6gdPqn7t0MOkFZ/n8LwrKALfL4zTuACEysr7hA==", "event"=>{"description"=>"toto", "status"=>"toto"}, "commit"=>"Create Event", "incident_id"=>"1"}
+Unpermitted parameter: status
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "toto"], ["created_at", "2016-08-30 08:35:41.649000"], ["updated_at", "2016-08-30 08:35:41.649000"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.9ms)
+
+NoMethodError (undefined method `event_url' for #<EventsController:0x007f9fe43b7500>):
+  app/controllers/events_controller.rb:31:in `block (2 levels) in create'
+  app/controllers/events_controller.rb:29:in `create'
+
+
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.6ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (11.2ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (23.6ms)
+
+
+Started GET "/incidents" for ::1 at 2016-08-30 10:38:59 +0200
+Processing by IncidentsController#index as HTML
+  [1m[36mIncident Load (0.2ms)[0m  [1mSELECT "incidents".* FROM "incidents"[0m
+  Rendered incidents/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 18ms (Views: 14.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/incidents/1" for ::1 at 2016-08-30 10:39:01 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mIncident Load (0.2ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered incidents/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/incidents/1/events" for ::1 at 2016-08-30 10:39:09 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1yHfW5dEdFdgYhhbWT0I631cNlVxJiyV/0+Wau0E/pkTlTUGwzI2QVFGpb+kZZKELbu4vy0vYPbFXh7ngRv33g==", "event"=>{"description"=>"toto", "status"=>"titi"}, "commit"=>"Create Event", "incident_id"=>"1"}
+  [1m[36mIncident Load (0.1ms)[0m  [1mSELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+NoMethodError (undefined method `event' for #<Incident:0x007f9fdc7cfeb0>):
+  app/controllers/events_controller.rb:28:in `create'
+
+
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.5ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (13.4ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (26.5ms)
+
+
+Started POST "/incidents/1/events" for ::1 at 2016-08-30 10:39:26 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1yHfW5dEdFdgYhhbWT0I631cNlVxJiyV/0+Wau0E/pkTlTUGwzI2QVFGpb+kZZKELbu4vy0vYPbFXh7ngRv33g==", "event"=>{"description"=>"toto", "status"=>"titi"}, "commit"=>"Create Event", "incident_id"=>"1"}
+  [1m[35mIncident Load (0.2ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("description", "status", "incident_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["description", "toto"], ["status", "titi"], ["incident_id", 1], ["created_at", "2016-08-30 08:39:26.480216"], ["updated_at", "2016-08-30 08:39:26.480216"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/incidents/1
+Completed 302 Found in 18ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/incidents/1" for ::1 at 2016-08-30 10:39:26 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mIncident Load (0.1ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered incidents/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-30 10:39:26 +0200
+
+
+Started GET "/assets/scaffolds.self-18c66ede9fb6b02536ccd4513658f5880a474ccf869cb53926f0e1c2d3a36952.css?body=1" for ::1 at 2016-08-30 10:39:26 +0200
+
+
+Started GET "/assets/incidents.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-30 10:39:26 +0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-08-30 10:39:26 +0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-08-30 10:39:26 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-30 10:39:26 +0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-30 10:39:26 +0200
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-30 10:39:26 +0200
+
+
+Started GET "/assets/incidents.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-30 10:39:26 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-30 10:39:26 +0200
+
+
+Started POST "/incidents/1/events" for ::1 at 2016-08-30 10:39:32 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lWn+qM1N6+UhLAi53O6qLSW7shViLMhTpazRBEGK5FtR3RT1mTup8xAItV0htjBCdVw8/z4lhDCfvVmJLZXtHA==", "event"=>{"description"=>"toutou", "status"=>"toutou"}, "commit"=>"Create Event", "incident_id"=>"1"}
+  [1m[36mIncident Load (0.1ms)[0m  [1mSELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("description", "status", "incident_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["description", "toutou"], ["status", "toutou"], ["incident_id", 1], ["created_at", "2016-08-30 08:39:32.923188"], ["updated_at", "2016-08-30 08:39:32.923188"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/incidents/1
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/incidents/1" for ::1 at 2016-08-30 10:39:32 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIncident Load (0.1ms)[0m  [1mSELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered incidents/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/incidents/1" for ::1 at 2016-08-30 10:41:01 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mIncident Load (0.1ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."incident_id" = ?[0m  [["incident_id", 1]]
+  Rendered incidents/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-30 10:41:01 +0200
+
+
+Started GET "/assets/scaffolds.self-18c66ede9fb6b02536ccd4513658f5880a474ccf869cb53926f0e1c2d3a36952.css?body=1" for ::1 at 2016-08-30 10:41:01 +0200
+
+
+Started GET "/assets/incidents.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-30 10:41:01 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-30 10:41:01 +0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-08-30 10:41:01 +0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-30 10:41:01 +0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-08-30 10:41:01 +0200
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-30 10:41:01 +0200
+
+
+Started GET "/assets/incidents.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-30 10:41:01 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-30 10:41:01 +0200
+
+
+Started GET "/incidents" for ::1 at 2016-08-30 10:41:08 +0200
+Processing by IncidentsController#index as HTML
+  [1m[35mIncident Load (0.1ms)[0m  SELECT "incidents".* FROM "incidents"
+  Rendered incidents/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/incidents/new" for ::1 at 2016-08-30 10:41:12 +0200
+Processing by IncidentsController#new as HTML
+  Rendered incidents/_form.html.erb (2.5ms)
+  Rendered incidents/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/incidents" for ::1 at 2016-08-30 10:41:31 +0200
+Processing by IncidentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"doKat7a5pYnSTiMoz7ynK9eWCPXFJxK6xkJDWBqgXhSyNnDq4s/nn+Nqnswy5D1Eh3GGH5kuXtn8U8vVdr9XUw==", "incident"=>{"title"=>"folder ???", "description"=>"folder ???", "status"=>"open"}, "commit"=>"Create Incident"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "incidents" ("title", "description", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "folder ???"], ["description", "folder ???"], ["status", "open"], ["created_at", "2016-08-30 08:41:31.326554"], ["updated_at", "2016-08-30 08:41:31.326554"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/incidents/2
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/incidents/2" for ::1 at 2016-08-30 10:41:31 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mIncident Load (0.1ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."incident_id" = ?[0m  [["incident_id", 2]]
+  Rendered incidents/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/incidents/2/events" for ::1 at 2016-08-30 10:41:47 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kuatpyrxv9fXFAwy43AlmEusg5dLv+ZFJV5dp1irmzvuUkf6fof9weYwsdYeKL/3G0sNfRe2qiYfT9UqNLSSfA==", "event"=>{"description"=>"les folders n'ont pas de noms", "status"=>"open"}, "commit"=>"Create Event", "incident_id"=>"2"}
+  [1m[35mIncident Load (0.1ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("description", "status", "incident_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["description", "les folders n'ont pas de noms"], ["status", "open"], ["incident_id", 2], ["created_at", "2016-08-30 08:41:47.230510"], ["updated_at", "2016-08-30 08:41:47.230510"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/incidents/2
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/incidents/2" for ::1 at 2016-08-30 10:41:47 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mIncident Load (0.1ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."incident_id" = ?[0m  [["incident_id", 2]]
+  Rendered incidents/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/incidents/2/events" for ::1 at 2016-08-30 10:41:56 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gbe4Vd0jsB5C9L8ITqP3wUG217KFsNAm7ku/UcmixJFFA1IIiVXyCHPQAuyz+22uEVFZWNm5nEXUWjfcpb3N1g==", "event"=>{"description"=>"ça va mieux", "status"=>"close"}, "commit"=>"Create Event", "incident_id"=>"2"}
+  [1m[35mIncident Load (0.1ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("description", "status", "incident_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["description", "ça va mieux"], ["status", "close"], ["incident_id", 2], ["created_at", "2016-08-30 08:41:56.414290"], ["updated_at", "2016-08-30 08:41:56.414290"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/incidents/2
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/incidents/2" for ::1 at 2016-08-30 10:41:56 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mIncident Load (0.1ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."incident_id" = ?[0m  [["incident_id", 2]]
+  Rendered incidents/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-08-30 10:43:29 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/incidents" for ::1 at 2016-08-30 10:43:33 +0200
+Processing by IncidentsController#index as HTML
+  [1m[35mIncident Load (0.1ms)[0m  SELECT "incidents".* FROM "incidents"
+  Rendered incidents/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/incidents/new" for ::1 at 2016-08-30 10:43:46 +0200
+Processing by IncidentsController#new as HTML
+  Rendered incidents/_form.html.erb (1.6ms)
+  Rendered incidents/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/incidents" for ::1 at 2016-08-30 10:43:58 +0200
+Processing by IncidentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ndN1lWyl46trS8HyaqjOzXnXmmpPm0r6Lg6Ac6jhxFdZZ5/IONOhvVpvfBaX8FSiKTAUgBOSBpkUHwj+xP7NEA==", "incident"=>{"title"=>"openshift ko", "description"=>"openshift ko", "status"=>"open"}, "commit"=>"Create Incident"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "incidents" ("title", "description", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "openshift ko"], ["description", "openshift ko"], ["status", "open"], ["created_at", "2016-08-30 08:43:58.766924"], ["updated_at", "2016-08-30 08:43:58.766924"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/incidents/3
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/incidents/3" for ::1 at 2016-08-30 10:43:58 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mIncident Load (0.1ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."incident_id" = ?[0m  [["incident_id", 3]]
+  Rendered incidents/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/incidents/3/events" for ::1 at 2016-08-30 10:44:10 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UmRDRzDA7787WYPED5lnlIA698kNCGbDcfUSTNadJAKW0KkaZLatqQp9PiDywf370N15I1EBKqBL5JrBuoItRQ==", "event"=>{"description"=>"probleme de route ", "status"=>"open"}, "commit"=>"Create Event", "incident_id"=>"3"}
+  [1m[35mIncident Load (0.1ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("description", "status", "incident_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["description", "probleme de route "], ["status", "open"], ["incident_id", 3], ["created_at", "2016-08-30 08:44:10.034609"], ["updated_at", "2016-08-30 08:44:10.034609"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/incidents/3
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/incidents/3" for ::1 at 2016-08-30 10:44:10 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mIncident Load (0.1ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."incident_id" = ?[0m  [["incident_id", 3]]
+  Rendered incidents/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/incidents/3/events" for ::1 at 2016-08-30 10:44:42 +0200
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKRQjbgvyBJpjVvrQdT/NVTLCpsXYxglzRyuCA7TrE/wELrQ7FmKBFip5g+8jGVaBCyEcUtqVEb3DSaFYsylCA==", "event"=>{"description"=>"load balancer redémarré", "status"=>"close"}, "commit"=>"Create Event", "incident_id"=>"3"}
+  [1m[35mIncident Load (0.1ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("description", "status", "incident_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["description", "load balancer redémarré"], ["status", "close"], ["incident_id", 3], ["created_at", "2016-08-30 08:44:42.940607"], ["updated_at", "2016-08-30 08:44:42.940607"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/incidents/3
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/incidents/3" for ::1 at 2016-08-30 10:44:42 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mIncident Load (0.1ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."incident_id" = ?[0m  [["incident_id", 3]]
+  Rendered incidents/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/incidents" for ::1 at 2016-08-30 10:44:49 +0200
+Processing by IncidentsController#index as HTML
+  [1m[35mIncident Load (0.1ms)[0m  SELECT "incidents".* FROM "incidents"
+  Rendered incidents/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/incidents/1" for ::1 at 2016-08-30 10:44:52 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIncident Load (0.1ms)[0m  [1mSELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."incident_id" = ?  [["incident_id", 1]]
+  Rendered incidents/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/incidents/2" for ::1 at 2016-08-30 10:44:55 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mIncident Load (0.1ms)[0m  [1mSELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."incident_id" = ?  [["incident_id", 2]]
+  Rendered incidents/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/incidents/3" for ::1 at 2016-08-30 10:44:56 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mIncident Load (0.1ms)[0m  [1mSELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."incident_id" = ?  [["incident_id", 3]]
+  Rendered incidents/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.2ms)
