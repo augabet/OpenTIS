@@ -10,6 +10,7 @@ class IncidentsController < ApplicationController
   # GET /incidents/1
   # GET /incidents/1.json
   def show
+    
   end
 
   # GET /incidents/new

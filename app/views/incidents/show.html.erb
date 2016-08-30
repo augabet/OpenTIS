@@ -15,5 +15,35 @@
   <%= @incident.status %>
 </p>
 
+<h2>Events</h2>
+<% @incident.events.each do |event| %>
+  <p>
+    <strong>Description:</strong>
+    <%= event.description %>
+  </p>
+ 
+  <p>
+    <strong>Status:</strong>
+    <%= event.status %>
+  </p>
+<% end %>
+
+<h2>Add an event:</h2>
+<%= form_for([@incident, @incident.events.build]) do |f| %>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :status %><br>
+    <%= f.text_area :status %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+
 <%= link_to 'Edit', edit_incident_path(@incident) %> |
 <%= link_to 'Back', incidents_path %>
