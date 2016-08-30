@@ -1,0 +1,26 @@
+@import "font-awesome";
+@import "bootstrap";
+
+$body-bg: #fff;
+
+@font-face {
+  font-family: 'PT-sans';
+  src: font-url('fonts/PTS55F.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  background-color: #fff;
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+body {
+ font: 15px "PT-sans";
+}
+
+.container{
+  width: 940px;
+}

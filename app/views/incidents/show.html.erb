@@ -1,32 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @incident.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @incident.description %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @incident.status %>
-</p>
-
-<h2>Events</h2>
-<% @incident.events.each do |event| %>
-  <p>
-    <strong>Description:</strong>
-    <%= event.description %>
-  </p>
- 
-  <p>
-    <strong>Status:</strong>
-    <%= event.status %>
-  </p>
+<% if  @incident.status == "open" %>
+  <div class="alert alert-danger" role="alert"><%= @incident.title %></div>
+<% else  @incident.status == "closed" %>
+  <div class="alert alert-success" role="alert"><%= @incident.title %></div>
 <% end %>
+
+<div class="jumbotron">
+  <p><%= @incident.description %></p>
+</div>
+
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h2>Timeline</h2></div>
+<!--   <div class="panel-body">
+    <p>...</p>
+  </div> -->
+
+  <!-- List group -->
+<% @incident.events.each do |event| %> 
+  <ul class="list-group">
+    <li class="list-group-item"><%= event.description %>       <%= event.status %></li>
+  </ul>
+<% end %>
+
+</div>
+
 
 <h2>Add an event:</h2>
 <%= form_for([@incident, @incident.events.build]) do |f| %>
