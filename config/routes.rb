@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :incidents do
     resources :events
   end
+
+  root :to => "incidents#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
