@@ -2,9 +2,10 @@
 
 <h1>Listing Incidents</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
+      <th>Creation date</th>
       <th>Title</th>
       <th>Description</th>
       <th>Status</th>
@@ -15,12 +16,17 @@
   <tbody>
     <% @incidents.each do |incident| %>
       <tr>
+        <td><%= incident.created_at %></td>
         <td><%= incident.title %></td>
         <td><%= incident.description %></td>
-        <td><%= incident.status %></td>
-        <td><%= link_to 'Show', incident %></td>
+        <% if  incident.status == "open" %>
+            <td><span class="label label-danger"><%= incident.status %></span></td>
+        <% else  incident.status == "closed" %>
+            <td><span class="label label-success"><%= incident.status %></span></td>
+        <% end %>
+        <!--<td><%= link_to 'Show', incident %></td>
         <td><%= link_to 'Edit', edit_incident_path(incident) %></td>
-        <td><%= link_to 'Destroy', incident, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', incident, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +34,11 @@
 
 <br>
 
+<button type="button" class="btn btn-primary" aria-label="Left Align">
+  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New incident
+</button>
+
 <%= link_to 'New Incident', new_incident_path %>
+
+
+
