@@ -5,6 +5,7 @@ class IncidentsController < ApplicationController
   # GET /incidents.json
   def index
     @incidents = Incident.all
+    @incident = Incident.new
   end
 
   # GET /incidents/1
@@ -26,6 +27,7 @@ class IncidentsController < ApplicationController
   # POST /incidents.json
   def create
     @incident = Incident.new(incident_params)
+    @incident.status = "open"
 
     respond_to do |format|
       if @incident.save

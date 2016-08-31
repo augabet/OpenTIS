@@ -34,7 +34,21 @@
 
 <br>
 
+<a href="#" data-toggle="modal" data-target="#myModal" id="reset_modal" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> New incident</a>
 
-<%= link_to raw(' <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Incident'), new_incident_path, :method => :get, :class => 'btn btn-primary' %>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">New incident</h4>
+      </div>
+      <div class="modal-body">
+          <%= render 'form' %>      
+      </div>
+    </div>
+  </div>
+</div>
 
-
+</header>
