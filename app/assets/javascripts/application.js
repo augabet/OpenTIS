@@ -15,3 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+$(".incident-tab").click(function() {
+   window.location = $(this).data('link')
+})

@@ -15,7 +15,7 @@
 
   <tbody>
     <% @incidents.each do |incident| %>
-      <tr>
+      <tr class='incident-tab' data-link='<%= incident_path(incident) %>' style="cursor: pointer">
         <td><%= incident.created_at %></td>
         <td><%= incident.title %></td>
         <td><%= incident.description %></td>
@@ -24,9 +24,9 @@
         <% else  incident.status == "closed" %>
             <td><span class="label label-success"><%= incident.status %></span></td>
         <% end %>
-        <!--<td><%= link_to 'Show', incident %></td>
-        <td><%= link_to 'Edit', edit_incident_path(incident) %></td>
-        <td><%= link_to 'Destroy', incident, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+        <!--<td><%= link_to 'Show', incident %></td>-->
+        <!--<td><%= link_to 'Edit', edit_incident_path(incident) %></td>-->
+        <!--<td><%= link_to 'Destroy', incident, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>
