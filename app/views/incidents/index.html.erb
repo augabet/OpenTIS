@@ -34,11 +34,7 @@
 
 <br>
 
-<button type="button" class="btn btn-primary" aria-label="Left Align">
-  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New incident
-</button>
 
-<%= link_to 'New Incident', new_incident_path %>
-
+<%= link_to raw(' <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Incident'), new_incident_path, :method => :get, :class => 'btn btn-primary' %>
 
 
