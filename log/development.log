@@ -4925,3 +4925,174 @@ Processing by IncidentsController#new as HTML
   Rendered incidents/new.html.erb within layouts/application (4.6ms)
   Rendered layouts/_header.html.erb (1.4ms)
 Completed 200 OK in 57ms (Views: 56.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-31 10:05:15 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 18ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/incidents" for ::1 at 2016-08-31 10:05:19 +0200
+Processing by IncidentsController#index as HTML
+  [1m[35mIncident Load (0.2ms)[0m  SELECT "incidents".* FROM "incidents"
+  Rendered incidents/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 2374ms (Views: 2368.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/heart-blue-e941d55de638ec7171d22e9e8177938f452818bc78f8389ee79fa1091d1231c4.png" for ::1 at 2016-08-31 10:05:22 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-63faf0af44a428f182686f0d924bb30e369a9549630c7b98a969394f58431067.woff" for ::1 at 2016-08-31 10:05:22 +0200
+
+
+Started GET "/incidents" for ::1 at 2016-08-31 10:06:34 +0200
+Processing by IncidentsController#index as HTML
+  [1m[36mIncident Load (0.1ms)[0m  [1mSELECT "incidents".* FROM "incidents"[0m
+  Rendered incidents/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/incidents/1" for ::1 at 2016-08-31 10:06:49 +0200
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mIncident Load (0.2ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."incident_id" = ?[0m  [["incident_id", 1]]
+  Rendered incidents/show.html.erb within layouts/application (48.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 98ms (Views: 89.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/incidents" for ::1 at 2016-08-31 10:06:59 +0200
+Processing by IncidentsController#index as HTML
+  [1m[35mIncident Load (0.1ms)[0m  SELECT "incidents".* FROM "incidents"
+  Rendered incidents/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 43ms (Views: 42.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/incidents" for ::1 at 2016-08-31 10:07:14 +0200
+Processing by IncidentsController#index as HTML
+  [1m[36mIncident Load (0.3ms)[0m  [1mSELECT "incidents".* FROM "incidents"[0m
+  Rendered incidents/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 45ms (Views: 44.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-08-31 13:02:32 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IncidentsController#show as HTML
+  [1m[35mIncident Load (0.1ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = ? LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 23ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Incident with 'id'=):
+  app/controllers/incidents_controller.rb:68:in `set_incident'
+
+
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.2ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.2ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/aureliengabet/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.3ms)
+
+
+Started GET "/" for ::1 at 2016-08-31 13:02:49 +0200
+Processing by IncidentsController#index as HTML
+  [1m[36mIncident Load (0.5ms)[0m  [1mSELECT "incidents".* FROM "incidents"[0m
+  Rendered incidents/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 359ms (Views: 356.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/custom.self-024ba2b03b49d25b0295abea53d79e09997257e2f3227855b32bb766f2e1197a.css?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/font-awesome.self-a68a433274f8af6a9997bc1ed4076921f48545ebd66d157b04c49e24b0b786f4.css?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/incidents.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-7a7af5c8ba4364283850b1f448f93836f47a5a8078b5a270dff48a0ffb7794fd.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-4adffdab32ced79a8daf179d165ad4ea335ccb603f5eb6facfad22e1e8097b10.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/bootstrap/button.self-6b0e891f02d673ccaf0a597874a87a11abb7f2023eef0a1429ef11a9ad64518e.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-aabcecc58664c391624bced6df63a563bf95b49a77e553638d9b4d1ae7c694d7.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-8a49c10ee0ecf1595522dc78bd31e8d92f366b1f3b771a55637179769b225def.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-587df9d2c7fd8d15aa0de0c23c4d27e29f14a694b2e3e569e6428e339810a191.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-d7e5c723e2609d535008cd423300077b7f763c54e56292137aff715db6395871.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-8e777493bb637ab814ddcd40a5869595b8f90f3ba989e9b31a027edb4e703bb7.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-8d2354c9d5bdac79660b2ba0539f47968658e4a20193b290cd6a2428e5c14157.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-e9e22c9ace8edd7e84c7d3b6b8baeefb0f31a0deffcb73d3c6205a0b907ca7a4.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-e5574c497092e9743769dfe1229a0a3e11529530101e56b01312abe3db89ab91.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-4e2aebcdc63a94cfb9993afa4dea32f7077266758c185946e43f8581042fdc4f.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/incidents.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/heart-blue-e941d55de638ec7171d22e9e8177938f452818bc78f8389ee79fa1091d1231c4.png" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/fonts/PTS55F-f998ba6ffcffe1705ae06d055a6dbbbe979d6b8adf0aa36419de03af24bfc18c.ttf" for ::1 at 2016-08-31 13:02:50 +0200
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-63faf0af44a428f182686f0d924bb30e369a9549630c7b98a969394f58431067.woff" for ::1 at 2016-08-31 13:02:50 +0200
