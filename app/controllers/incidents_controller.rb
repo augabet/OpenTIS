@@ -4,7 +4,7 @@ class IncidentsController < ApplicationController
   # GET /incidents
   # GET /incidents.json
   def index
-    @incidents = Incident.all
+    @incidents = Incident.all(:include => :events, :order => "created_at DESC")
     @incident = Incident.new
   end
 

@@ -14,3 +14,19 @@
  *= require_self
  *= require font-awesome 
  */
+
+.green-circle {
+    background-color:#04B431;
+    height:15px;
+    width:15px;
+    -webkit-border-radius:7.5px;
+    -moz-border-radius:7.5px;
+}
+
+.red-circle {
+    background-color:#FE2E2E;
+    height:15px;
+    width:15px;
+    -webkit-border-radius:7.5px;
+    -moz-border-radius:7.5px;
+}
