@@ -4,7 +4,7 @@ class IncidentsController < ApplicationController
   # GET /incidents
   # GET /incidents.json
   def index
-    @incidents = Incident.all
+    @incidents = Incident.all.sort.reverse
     @incident = Incident.new
   end
 
