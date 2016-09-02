@@ -1,0 +1,14 @@
+<h2>Add an event:</h2>
+<%= form_for([@incident, @incident.events.build]) do |f| %>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :status %><br>
+    <%= f.text_area :status %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

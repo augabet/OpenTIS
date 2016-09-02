@@ -54,28 +54,42 @@
 <h1><%= @incident.title %></h1>
 <hr>
 
+<% if @incident.events.count > 0 %>
 <table class="table table-hover">
   <thead>
   <tr>
     <th>Status</th>
-    <th>Action</th>
-    <th>Owner</th>
-    <th>Date</th>
+    <th>Date</th>    
+      <th>Action</th>
   </tr>
   </thead>
-
-  <tbody>
-  <% @incident.events.each do |event| %>
+ 
+ <% @incident.events.each do |event| %>
+  
+  <tbody> 
     <tr>
     <% if  event.status == "open" %>
         <td><p class="red-circle"></p></td>
-    <% else  event.status == "closed" %>
+    <% elsif  event.status == "closed" %>
         <td><p class="green-circle"></p></td>
     <% end %>
+      <% if event.created_at %>
+      <td><%= event.created_at.strftime("%d/%m/%Y  -  %H:%M") %></td>
+      <% end %>
       <td><%= event.description %></td>
-      <td>TSU boloss</td>
-      <td><%= event.created_at %></td>
     </tr>
-  <% end %>
   </tbody>
+  <% end %>  
 </table>
+<% end%>
+
+<a href="#" data-toggle="modal" data-target="#myModal" id="reset_modal" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>Add an event</a>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= render 'form_for_events' %>
+    </div>
+  </div>
+</div>

@@ -4,11 +4,7 @@ class IncidentsController < ApplicationController
   # GET /incidents
   # GET /incidents.json
   def index
-<<<<<<< HEAD
-    @incidents = Incident.all(:include => :events, :order => "created_at DESC")
-=======
     @incidents = Incident.all.sort.reverse
->>>>>>> 69d5c2efe9427b1699c1581d07b0d98515bde802
     @incident = Incident.new
   end
 
