@@ -21,6 +21,22 @@ body {
  font: 15px "PT-sans";
 }
 
+.navbar {
+  margin-bottom:0;
+}
+
+.status{
+  height: 20px;
+  color: #fff;
+  text-align: center;
+}
+.status.status-ok{
+  background-color:#0da960;
+}
+.status.status-ko{
+  background-color:#d9534f;
+}
+
 .container{
   width: 940px;
 }

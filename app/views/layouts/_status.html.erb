@@ -1,0 +1,8 @@
+<% component_status = "ok" %>
+
+<% if component_status == "ok" ? status = "status-ok" : status = "status-ko"  %> 
+
+<div class="status <%= status %>">
+</div>
+
+<% end %>
