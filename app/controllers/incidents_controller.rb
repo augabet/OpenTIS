@@ -11,7 +11,7 @@ class IncidentsController < ApplicationController
   # GET /incidents/1
   # GET /incidents/1.json
   def show
-    
+    @events = @incident.events.sort.reverse if @incident.events
   end
 
   # GET /incidents/new
@@ -28,6 +28,11 @@ class IncidentsController < ApplicationController
   def create
     @incident = Incident.new(incident_params)
     @incident.status = "open"
+
+    event = Event.new
+    event.status = @incident.status
+    event.description = @incident.description
+    @incident.events.push(event)
 
     respond_to do |format|
       if @incident.save

@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.all.sort.reverse
   end
 
   # GET /events/1
@@ -26,6 +26,8 @@ class EventsController < ApplicationController
   def create
     @incident = Incident.find(params[:incident_id])
     @event = @incident.events.create(event_params)
+    @incident.status = @event.status
+    @incident.save
     redirect_to incident_path(@incident)
   end
 
