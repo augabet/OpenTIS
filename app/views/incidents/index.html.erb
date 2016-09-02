@@ -16,7 +16,7 @@
   <tbody>
     <% @incidents.each do |incident| %>
       <tr class='incident-tab' data-link='<%= incident_path(incident) %>' style="cursor: pointer">
-        <td><%= incident.created_at %></td>
+        <td><%= incident.created_at.strftime("%d/%m/%Y  -  %H:%M") %></td>
         <td><%= incident.title %></td>
         <td><%= incident.description %></td>
         <% if  incident.status == "open" %>
