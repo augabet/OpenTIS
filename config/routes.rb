@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :components
   resources :incidents do
     resources :events
   end
