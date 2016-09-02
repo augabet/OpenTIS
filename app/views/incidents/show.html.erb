@@ -1,3 +1,4 @@
+<!--
 <p id="notice"><%= notice %></p>
 
 
@@ -13,13 +14,13 @@
 
 
 <div class="panel panel-default">
-  <!-- Default panel contents -->
+  &lt;!&ndash; Default panel contents &ndash;&gt;
   <div class="panel-heading"><h2>Timeline</h2></div>
-<!--   <div class="panel-body">
+&lt;!&ndash;   <div class="panel-body">
     <p>...</p>
-  </div> -->
+  </div> &ndash;&gt;
 
-  <!-- List group -->
+  &lt;!&ndash; List group &ndash;&gt;
 <% @incident.events.each do |event| %> 
   <ul class="list-group">
     <li class="list-group-item"><%= event.description %>       <%= event.status %></li>
@@ -48,3 +49,33 @@
 
 <%= link_to 'Edit', edit_incident_path(@incident) %> |
 <%= link_to 'Back', incidents_path %>
+-->
+
+<h1><%= @incident.title %></h1>
+<hr>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Status</th>
+    <th>Action</th>
+    <th>Owner</th>
+    <th>Date</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @incident.events.each do |event| %>
+    <tr>
+    <% if  event.status == "open" %>
+        <td><p class="red-circle"></p></td>
+    <% else  event.status == "closed" %>
+        <td><p class="green-circle"></p></td>
+    <% end %>
+      <td><%= event.description %></td>
+      <td>TSU boloss</td>
+      <td><%= event.created_at %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
