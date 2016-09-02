@@ -9,11 +9,9 @@
 
 <%= render  'layouts/header'%>
 <%= render  'layouts/status'%>
-<div class="row">
-  <div class="col-md-10 col-md-offset-1">
-	  <%= yield %>
-  </div>
-</div>
+
+<%= yield %>
+
 
 </body>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
