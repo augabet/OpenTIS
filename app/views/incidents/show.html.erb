@@ -3,6 +3,9 @@
 <%= link_to 'Back', incidents_path %>
 -->
 
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+
 <h1><%= @incident.title %></h1>
 <hr>
 
@@ -38,10 +41,12 @@
 <a href="#" data-toggle="modal" data-target="#myModal" id="reset_modal" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>Add an event</a>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <%= render 'form_for_events' %>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <%= render 'form_for_events' %>
+      </div>
     </div>
+  </div>
   </div>
 </div>
