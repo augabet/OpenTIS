@@ -6,6 +6,7 @@ class IncidentsController < ApplicationController
   def index
     @incidents = Incident.all.sort.reverse
     @incident = Incident.new
+    @components = Component.all
   end
 
   # GET /incidents/1
@@ -28,11 +29,19 @@ class IncidentsController < ApplicationController
   def create
     @incident = Incident.new(incident_params)
     @incident.status = "open"
+    @components = Component.all
 
     event = Event.new
     event.status = @incident.status
     event.description = @incident.description
     @incident.events.push(event)
+
+    @components.each do |component|
+      if params["components_ids"].keys.include?(component.id.to_s)
+        component.status = false
+        component.save
+      end
+    end
 
     respond_to do |format|
       if @incident.save
