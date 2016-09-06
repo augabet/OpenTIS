@@ -2,15 +2,18 @@
 <div class="row" style="margin-top: 20px">
   <div class="col-md-10 col-md-offset-1" style="display:-webkit-inline-box">
 
+  <% color = ["first","second","third","fourth"] %>
   <% @components.each do |component|%>
+
+    <% color_sampled = color.sample %>
     <div class="component-square-offset">
       <div class="component-content">
-        <div class="component-content-title">
+        <div class="component-content-title <%= color_sampled %>">
           <%= component.name.capitalize %>
         </div>
-        <div class="component-content-body">
+        <div class="component-content-body <%= color_sampled %>">
         </div>
-        <div class="component-content-title">
+        <div class="component-content-footer <%= color_sampled %>">
           <% if component.available == false %>
             Unavailable
           <% else %>

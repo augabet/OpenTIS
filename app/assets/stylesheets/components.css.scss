@@ -48,14 +48,41 @@
     position: absolute;
 }
 
+$first-color: #ffc40d;
+$second-color: #00a300;
+$third-color: #1e7145;
+$fourth-color: #9f00a7;
+
 .component-content-title {
-    height: 10%;
-    background-color: green;
+    height: 15%;
     text-align: center;
     color: white;
     font-weight: bold;
 }
 
 .component-content-body {
-    height: 80%;
+    height: 70%;
 }
+
+.component-content-footer {
+    height: 15%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.component-content-title.first {background-color: lighten($first-color, 10%);}
+.component-content-body.first {background-color: $first-color;}
+.component-content-footer.first {background-color: darken($first-color, 6.7%);}
+
+.component-content-title.second {background-color: lighten($second-color, 10%);}
+.component-content-body.second {background-color: $second-color;}
+.component-content-footer.second {background-color: darken($second-color, 6.7%);}
+
+.component-content-title.third {background-color: lighten($third-color, 10%);}
+.component-content-body.third {background-color: $third-color;}
+.component-content-footer.third {background-color: darken($third-color, 6.7%);}
+
+.component-content-title.fourth {background-color: lighten($fourth-color, 10%);}
+.component-content-body.fourth {background-color: $fourth-color;}
+.component-content-footer.fourth {background-color: darken($fourth-color, 6.7%);}
