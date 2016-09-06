@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :get_component_status
   
   def get_component_status
-    components_ko = Component.where(status: false)
+    components_ko = Component.where(available: false)
     if components_ko.any?
   	  @component_status = "status-ko"
     else

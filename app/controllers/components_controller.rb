@@ -29,10 +29,10 @@ class ComponentsController < ApplicationController
     respond_to do |format|
       if @component.save
         format.html { redirect_to @component, notice: 'Component was successfully created.' }
-        format.json { render :show, status: :created, location: @component }
+        format.json { render :show, available: :created, location: @component }
       else
         format.html { render :new }
-        format.json { render json: @component.errors, status: :unprocessable_entity }
+        format.json { render json: @component.errors, available: :unprocessable_entity }
       end
     end
   end
@@ -43,10 +43,10 @@ class ComponentsController < ApplicationController
     respond_to do |format|
       if @component.update(component_params)
         format.html { redirect_to @component, notice: 'Component was successfully updated.' }
-        format.json { render :show, status: :ok, location: @component }
+        format.json { render :show, available: :ok, location: @component }
       else
         format.html { render :edit }
-        format.json { render json: @component.errors, status: :unprocessable_entity }
+        format.json { render json: @component.errors, available: :unprocessable_entity }
       end
     end
   end
@@ -69,6 +69,6 @@ class ComponentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def component_params
-      params.require(:component).permit(:name, :status)
+      params.require(:component).permit(:name, :available)
     end
 end

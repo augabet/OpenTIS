@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Status</th>
+      <th>available</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +15,7 @@
     <% @components.each do |component| %>
       <tr>
         <td><%= component.name %></td>
-        <td><%= component.status %></td>
+        <td><%= component.available %></td>
         <td><%= link_to 'Show', component %></td>
         <td><%= link_to 'Edit', edit_component_path(component) %></td>
         <td><%= link_to 'Destroy', component, method: :delete, data: { confirm: 'Are you sure?' } %></td>

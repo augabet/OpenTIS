@@ -38,7 +38,7 @@ class IncidentsController < ApplicationController
 
     @components.each do |component|
       if params["components_ids"].keys.include?(component.id.to_s)
-        component.status = false
+        component.available = false
         component.save
       end
     end

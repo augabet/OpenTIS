@@ -6,15 +6,15 @@
     <div class="component-square-offset">
       <div class="component-content">
         <div class="component-content-title">
-          <%= component.name %>
+          <%= component.name.capitalize %>
         </div>
         <div class="component-content-body">
         </div>
         <div class="component-content-title">
-          <% if component.status == false %>
-            Indisponible
+          <% if component.available == false %>
+            Unavailable
           <% else %>
-            Diponible
+            Available
           <% end %>
         </div>
       </div>

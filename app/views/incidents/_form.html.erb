@@ -29,7 +29,7 @@
       <% @components.each do |c| %>
       <div class="form-group">
         <%= label_tag :checkbox, c.name %>    
-        <%= check_box_tag "components_ids[#{c.id}]", c.status %>
+        <%= check_box_tag "components_ids[#{c.id}]", c.available %>
       </div>
       <% end %>
 </div>
