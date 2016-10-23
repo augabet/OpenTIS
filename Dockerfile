@@ -8,7 +8,9 @@ COPY Gemfile* ./
 RUN bundle install
 COPY . .
 
-RUN bundle exec rake db:migrate
+RUN bundle exec rake db:drop && \
+	bundle exec rake db:reset && \
+	bundle exec rake db:migrate
 
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]

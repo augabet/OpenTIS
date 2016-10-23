@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: opentis-ingress
+spec:
+  rules:
+  - host: opentis
+    http:
+      paths:
+      - backend:
+          serviceName: opentis
+          servicePort: 3000

@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: opentis
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: opentis
+    spec:
+      containers:
+      - name: opentis
+        image: agabet/opentis:0.1
+        ports:
+        - containerPort: 3000
