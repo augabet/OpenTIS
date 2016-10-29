@@ -2,12 +2,18 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: opentis
+  labels:
+    name: opentis
 spec:
   replicas: 1
   template:
     metadata:
       labels:
         app: opentis
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9292"
+        prometheus.io/path: ""          
     spec:
       containers:
       - name: opentis
