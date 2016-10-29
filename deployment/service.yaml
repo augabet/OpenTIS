@@ -11,8 +11,8 @@
         "ports": [
             {
                 "protocol": "TCP",
-                "port": 3000,
-                "targetPort": 3000
+                "port": 9292,
+                "targetPort": 9292
             }
         ]
     }

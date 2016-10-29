@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
       - name: opentis
-        image: agabet/opentis:0.1
+        image: agabet/opentis:0.2
         ports:
-        - containerPort: 3000
+        - containerPort: 9292

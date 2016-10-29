@@ -9,4 +9,4 @@ spec:
       paths:
       - backend:
           serviceName: opentis
-          servicePort: 3000
+          servicePort: 9292

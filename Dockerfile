@@ -12,5 +12,5 @@ RUN bundle exec rake db:drop && \
 	bundle exec rake db:reset && \
 	bundle exec rake db:migrate
 
-EXPOSE 3000
-CMD ["rails", "server", "-b", "0.0.0.0"]
+EXPOSE 9292
+CMD ["rackup", "-o", "0.0.0.0"]
