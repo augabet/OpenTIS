@@ -85,9 +85,11 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    pg (0.19.0)
     pkg-config (1.1.7)
     prometheus-client (0.6.0)
       quantile (~> 0.2.0)
+    puma (3.7.0)
     quantile (0.2.0)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -183,7 +185,9 @@ DEPENDENCIES
   hirb
   jbuilder (~> 2.0)
   jquery-rails
+  pg
   prometheus-client (~> 0.6.0)
+  puma (~> 3.0)
   rails (= 4.2.6)
   rake (= 11.2.0)
   rspec-rails (~> 3.5)
