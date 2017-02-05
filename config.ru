@@ -2,9 +2,9 @@
 require ::File.expand_path('../config/environment', __FILE__)
 
 
-use Rack::Deflater
-use Prometheus::Client::Rack::Collector
-use Prometheus::Client::Rack::Exporter
+# use Rack::Deflater
+# use Prometheus::Client::Rack::Collector
+# use Prometheus::Client::Rack::Exporter
 
 run Rails.application
 
